@@ -1,13 +1,10 @@
 package com.TinyAndroidStudio.kajus.thecatgenerator;
 
 import android.animation.ObjectAnimator;
-import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-
 
 import java.util.Random;
 
@@ -62,12 +59,10 @@ public class Generate extends AppCompatActivity {
     public void generate(){
 
         try {
-            ImageView pic = (ImageView) findViewById(com.TinyAndroidStudio.kajus.thecatgenerator.R.id.kat);
+            ImageView pic = findViewById(com.TinyAndroidStudio.kajus.thecatgenerator.R.id.kat);
             ObjectAnimator oA = ObjectAnimator.ofFloat(pic, "alpha", 0, 1);
 
             Random generator = new Random();
-
-
             int number = generator.nextInt(31);
 
             while (lastCatInd == number){
@@ -90,6 +85,7 @@ public class Generate extends AppCompatActivity {
 
     public void newCat(View view)
     {
+
         generate();
     }
 
